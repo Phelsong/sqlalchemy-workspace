@@ -13,3 +13,11 @@ result_proxy = connection.execute (query2)
 result_set = result_proxy.fetchall()
 
 print(result_set[0])
+
+query3 = cameras.insert().values(Brand="RED", Model="V-Raptor", Format="FF")
+connection.execute (query3)
+
+query4 = db.select([cameras])
+result_proxy2 = connection.execute (query4)
+result_set = result_proxy2.fetchall()
+print(result_set[:4])
